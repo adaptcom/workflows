@@ -1,0 +1,9 @@
+{
+  "slug": "seo-agent",
+  "name": "SEO Agent",
+  "department": "Marketing",
+  "summary": "Recurring SEO reporting plus a daily rank-progress loop that does the reporting, finds the gaps, and ships the gaps.",
+  "integrations": ["Google Search Console", "Google Analytics", "Ahrefs", "Call transcripts", "CMS", "Slack"],
+  "cadence": "Recurring (weekly + daily)",
+  "outputs": ["Weekly report", "Daily tactic", "Draft content"]
+}
