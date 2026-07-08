@@ -1,3 +1,14 @@
+> **This folder is a TEMPLATE, not a live memory store.**
+> To set up the Code Janitor you must create a SEPARATE, empty GitHub repository
+> (it can be private) and copy the contents of this `memory-template/` folder into
+> it as the initial commit. That new repo, not this folder, is what the janitor
+> reads from and writes to on every run. The copy inside the skill never changes.
+>
+> Setup in three steps:
+> 1. Create a new empty GitHub repo, e.g. `your-org/janitor-memory` (private is fine).
+> 2. Copy everything under `memory-template/` into it and commit.
+> 3. Fill in the placeholders in `MISSION.md` and delete the example issue.
+
 # Janitor memory
 
 This repository is the Code Janitor's durable, file-system-based memory. It is NOT

@@ -25,7 +25,7 @@ On each run it:
 ## Prerequisites and data sources
 
 - **GitHub** connected, with push access to the target repository and permission to open PRs.
-- **A separate memory repository** (can be private) that the janitor uses as durable, file-system-based memory. This is intentionally NOT the Adapt knowledge base, so the janitor's bookkeeping stays isolated and diffable.
+- **A separate, empty GitHub repository** for memory (can be private). You create this yourself from the `memory-template/` folder that ships with this skill (see Setup). It is intentionally NOT the Adapt knowledge base, so the janitor's bookkeeping stays isolated, versioned, and diffable. Setting this up assumes some GitHub comfort.
 - **Slack** (optional) for notifications when a PR is opened.
 - **An issue tracker** (optional, e.g. Linear/Jira/GitHub Issues) if you want it to pull "easy" tracked issues.
 
@@ -43,9 +43,18 @@ Set these when you install the workflow:
 
 ## Setup: create the recurring task
 
-1. Verify access first: confirm you can read/write the `MEMORY_REPO` and push to `TARGET_REPO`.
-2. Initialize the memory repo from the starter template shipped with this skill (`memory-template/`): copy its contents into `MEMORY_REPO`, then replace the `[TARGET_REPO]`, `[ISSUE_TRACKER_SCOPE]`, `[MAX_PR_LINES]`, and `[NOTIFY]` placeholders in `MISSION.md` with your values and delete the example issue. On the first run `MISSION.md` becomes the purpose future runs read back.
-3. Create a recurring Adapt task on your `CADENCE` that executes the run loop.
+Before the janitor can run, you set up its memory repo. The `memory-template/` folder in
+this skill is a TEMPLATE, not the live memory. You turn it into a real repo once:
+
+1. **Create the memory repo.** Make a new, empty GitHub repository (can be private), e.g.
+   `[your-org/janitor-memory]`. This becomes `MEMORY_REPO`.
+2. **Seed it from the template.** Copy the contents of `memory-template/` into that repo and
+   commit them as the initial commit. Then replace the `[TARGET_REPO]`, `[ISSUE_TRACKER_SCOPE]`,
+   `[MAX_PR_LINES]`, and `[NOTIFY]` placeholders in `MISSION.md` with your values, and delete
+   the example issue in `issues/open/`. From now on `MISSION.md` is the purpose every run reads back.
+3. **Verify access.** Confirm your GitHub can read/write `MEMORY_REPO` and push branches / open
+   PRs on `TARGET_REPO`.
+4. **Create the recurring Adapt task** on your `CADENCE` that executes the run loop below.
 
 ## The run loop
 
