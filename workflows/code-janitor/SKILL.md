@@ -44,7 +44,7 @@ Set these when you install the workflow:
 ## Setup: create the recurring task
 
 1. Verify access first: confirm you can read/write the `MEMORY_REPO` and push to `TARGET_REPO`.
-2. Initialize the memory repo (see layout below) with a `MISSION.md` describing this purpose and run loop. On the first run this file becomes the thing future runs read back.
+2. Initialize the memory repo from the starter template shipped with this skill (`memory-template/`): copy its contents into `MEMORY_REPO`, then replace the `[TARGET_REPO]`, `[ISSUE_TRACKER_SCOPE]`, `[MAX_PR_LINES]`, and `[NOTIFY]` placeholders in `MISSION.md` with your values and delete the example issue. On the first run `MISSION.md` becomes the purpose future runs read back.
 3. Create a recurring Adapt task on your `CADENCE` that executes the run loop.
 
 ## The run loop
@@ -60,18 +60,25 @@ Set these when you install the workflow:
 
 ## Memory repo layout
 
+This skill ships a ready-to-use starter in `memory-template/`. Copy it into `MEMORY_REPO`
+on setup. It contains:
+
 ```
-README.md              # what this repo is and how a run uses it
-MISSION.md             # purpose, mission, goals, the full run loop and rules
-STATE.md               # last run timestamp, in-flight PR (number/branch/issue), counters
-index.md               # table: id | title | category | severity | effort | est lines | splittable | status | found | fixed
-issues/open/           # ISSUE-XXXX.md, one per issue (sub-issues inline)
-issues/fixed/          # moved here once fixed, so it is never re-fixed
-issues/wontfix/        # abandoned (over the line cap) with learnings
-runs/YYYY-MM-DDTHH.md  # per-run journal
+README.md              what this repo is and how a run uses it
+MISSION.md             purpose, mission, goals, the run loop, and rules (edit placeholders)
+STATE.md               last run timestamp, in-flight PR, counters
+index.md               master table: id | title | category | severity | effort | est lines | splittable | status | found | fixed
+issues/
+  ISSUE-TEMPLATE.md    copy this per new issue
+  open/                one file per open issue (seeded with an example ISSUE-0001)
+  fixed/               moved here once fixed, so it is never re-fixed
+  wontfix/             abandoned (over the line cap) with learnings
+runs/                  one journal entry per run (YYYY-MM-DDTHH.md)
 ```
 
-The `index.md` plus the `issues/fixed/` folder are the dedup mechanism that stops the agent from re-finding and re-fixing the same thing.
+The `index.md` plus the `issues/fixed/` folder are the dedup mechanism that stops the
+agent from re-finding and re-fixing the same thing. Delete the seeded example issue after
+your first real run.
 
 ## Guardrails and philosophy
 
