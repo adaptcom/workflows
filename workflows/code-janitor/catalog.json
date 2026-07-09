@@ -3,7 +3,19 @@
   "name": "Code Janitor",
   "department": "Engineering",
   "summary": "An always-on agent that opens small, safe cleanup PRs behind your CI gates, with a very high merge rate.",
-  "integrations": ["GitHub", "Slack", "Linear (optional)"],
+  "integrations": [
+    "GitHub",
+    "Slack",
+    "Linear (optional)"
+  ],
   "cadence": "Recurring (hourly or daily)",
-  "outputs": ["Pull requests", "Slack notifications"]
+  "outputs": [
+    "Pull requests",
+    "Slack notifications"
+  ],
+  "prerequisites": [
+    "This workflow depends on an external memory store. Because it is an engineering workflow, we recommend a GitHub repository as that memory.",
+    "Create a new GitHub repository (private is fine) and seed it from the [memory template](https://github.com/adaptcom/workflows/tree/main/workflows/code-janitor/memory-template).",
+    "Adapt uses that repository as its source of truth to remember what it has already done and continuously improve over time."
+  ]
 }
