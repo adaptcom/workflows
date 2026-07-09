@@ -1,0 +1,14 @@
+{
+  "slug": "public-docs",
+  "name": "Docs & Changelog",
+  "department": "Engineering",
+  "summary": "Verify shipped behavior, update durable public docs and the changelog together, and open a draft docs PR.",
+  "integrations": ["GitHub", "Slack (optional)"],
+  "cadence": "Event-triggered or on demand",
+  "outputs": ["Documentation PR", "Changelog entry", "Release-thread update"],
+  "prerequisites": [
+    "GitHub connected, with read access to the source repository and write access to the documentation repository.",
+    "Document the public docs URL, docs platform, changelog location, repository structure, and project voice rules.",
+    "Provide a reliable release source such as a shipped-features Slack channel, merged PR event, release webhook, or direct request."
+  ]
+}

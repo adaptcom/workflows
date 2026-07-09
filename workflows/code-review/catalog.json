@@ -1,0 +1,14 @@
+{
+  "slug": "code-review",
+  "name": "Code Review",
+  "department": "Engineering",
+  "summary": "A senior-engineer PR review that hunts for real bugs, validates risky behavior, and posts severity-tiered findings.",
+  "integrations": ["GitHub", "Slack (optional)"],
+  "cadence": "On demand or event-triggered",
+  "outputs": ["GitHub review", "Inline comments", "Slack summary (optional)"],
+  "prerequisites": [
+    "GitHub connected, with read access to the repository and permission to comment on pull requests.",
+    "Project-specific validation commands (format, lint, typecheck, tests) should be documented in the repository.",
+    "For frontend runtime QA, the pull request should expose a reachable preview deployment."
+  ]
+}

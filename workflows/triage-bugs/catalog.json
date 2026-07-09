@@ -1,0 +1,14 @@
+{
+  "slug": "triage-bugs",
+  "name": "Bug Triage",
+  "department": "Engineering",
+  "summary": "Investigate inbound bug reports, attempt reproduction, then fix, file, deduplicate, or decline with evidence.",
+  "integrations": ["Slack", "GitHub", "Linear"],
+  "cadence": "Event-triggered or on demand",
+  "outputs": ["Pull requests", "Bug or investigation tickets", "Threaded triage updates"],
+  "prerequisites": [
+    "Connect the intake source (typically Slack), the target code repository, and an issue tracker.",
+    "Configure the intake channel, target repository, issue-tracker project, existing labels, and immediate-fix budget.",
+    "Provide a safe reproduction environment or preview when runtime investigation is expected."
+  ]
+}
