@@ -14,6 +14,9 @@
     "Slack notifications"
   ],
   "prerequisites": [
+    "GitHub connected, with push access to the target repository and permission to open PRs.",
+    "Slack (optional) for notifications when a PR is opened.",
+    "An issue tracker (optional, e.g. Linear/Jira/GitHub Issues) if you want it to pull \"easy\" tracked issues.",
     "This workflow depends on an external memory store. Because it is an engineering workflow, we recommend a GitHub repository as that memory.",
     "Create a new GitHub repository (private is fine) and seed it from the [memory template](https://github.com/adaptcom/workflows/tree/main/workflows/code-janitor/memory-template).",
     "Adapt uses that repository as its source of truth to remember what it has already done and continuously improve over time."

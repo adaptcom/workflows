@@ -22,12 +22,6 @@ On each run it:
 5. Opens at most one pull request, and notifies you.
 6. Marks fixed issues in memory so it never re-attempts them.
 
-## Prerequisites and data sources
-
-- **GitHub** connected, with push access to the target repository and permission to open PRs.
-- **A separate, empty GitHub repository** for memory (can be private). You create this yourself from the `memory-template/` folder that ships with this skill (see Setup). It is intentionally NOT the Adapt knowledge base, so the janitor's bookkeeping stays isolated, versioned, and diffable. Setting this up assumes some GitHub comfort.
-- **Slack** (optional) for notifications when a PR is opened.
-- **An issue tracker** (optional, e.g. Linear/Jira/GitHub Issues) if you want it to pull "easy" tracked issues.
 
 ## Configuration
 
