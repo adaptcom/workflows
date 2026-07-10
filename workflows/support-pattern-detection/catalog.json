@@ -1,0 +1,24 @@
+{
+  "slug": "support-pattern-detection",
+  "name": "Support Pattern Detection",
+  "department": "Customer Support",
+  "summary": "Turn recent customer tickets into a concise, evidence-linked view of recurring problems, emerging spikes, severity, and the next action.",
+  "integrations": [
+    "Zendesk",
+    "Intercom",
+    "Slack (optional)",
+    "Linear (optional)"
+  ],
+  "cadence": "Recurring (daily) or on demand",
+  "outputs": [
+    "Prioritized support patterns",
+    "Severity and trend assessment",
+    "Escalation recommendations"
+  ],
+  "prerequisites": [
+    "Connect a customer-support system with read access to tickets, such as Zendesk or Intercom.",
+    "Configure the analysis window, minimum pattern size, severity rules, exclusions, and delivery destination.",
+    "Meaningful trend comparisons require enough ticket volume and at least one prior matching time window.",
+    "Slack and an issue tracker are optional if you want reports delivered to a channel or escalations filed automatically."
+  ]
+}
